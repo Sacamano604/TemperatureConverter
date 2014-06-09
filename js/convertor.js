@@ -1,7 +1,8 @@
 var makeFahrenheit = function(celcius) {
 	if (isNaN(celcius)) {
-		document.getElementById("error").innerHTML = "<p id='error'>Sorry, please enter a number.</p>";		
+		document.getElementById("messages").innerHTML = "<p id='errorMessage'>Sorry, please enter a valid number.</p>";		
 	} else {
-		console.log("We're good to go");
+		var fahrenheit = ((celcius * 9)/5) + 32;
+		document.getElementById("messages").innerHTML = "<p id='result'>" + fahrenheit + " degrees fahrenheit";
 	}
 };
