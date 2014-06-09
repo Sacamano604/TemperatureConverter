@@ -14,11 +14,20 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-    #messages {
+    #celMessages {
+      padding: 10px;
+    }
+    #farMessages {
       padding: 10px;
     }
     #errorMessage {
       color: #FF0000;
+    }
+    #result {
+      color: #508BFA;
+    }
+    td {
+      vertical-align: top;
     }
     </style>
   </head>
@@ -27,14 +36,30 @@
       <div class="page-header">
           <h3>Temperature Convertor</h3>
       </div>  
-      <form class="form-inline" role="form">
-        <div class="form-group">
-            <label class="sr-only" for="celsius">Celsius to Convert</label>
-            <input class="form-control" id="celsius" valyue="celsius" placeholder="Enter Temp in Celsius">
-        </div>
-        <button type="submit" class="btn btn-success" onclick="makeFahrenheit(document.getElementById('celsius').value); return false;">Sign in</button>
-      </form>
-      <div id="messages"></div>
+      
+      <table width="800" height="100">
+      <tr>
+      <td>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+              <label class="sr-only" for="celsius">Celsius to Convert</label>
+              <input class="form-control" id="celsius" placeholder="Enter Temp in C">
+          </div>
+          <button type="submit" class="btn btn-success" onclick="makeFahrenheit(document.getElementById('celsius').value); return false;">Convert</button>
+        </form>
+        <div id="celMessages"></div>
+      </td>
+      <td>
+        <form class="form-inline" role="form">
+         <div class="form-group">
+              <label class="sr-only" for="fahrenheit">Fahrenheit to Convert</label>
+              <input class="form-control" id="fahrenheit" placeholder="Enter Temp in F">
+          </div>
+          <button type="submit" class="btn btn-success" onclick="makeCelsius(document.getElementById('fahrenheit').value); return false;">Convert</button>
+        </form>
+        <div id="farMessages"></div>
+      </td>
+    </tr>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
