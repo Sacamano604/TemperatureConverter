@@ -5,30 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Temperature Convertor</title>
-    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style type="text/css">
-    #celMessages {
-      padding: 10px;
-    }
-    #farMessages {
-      padding: 10px;
-    }
-    #errorMessage {
-      color: #FF0000;
-    }
-    #result {
-      color: #508BFA;
-    }
-    td {
-      vertical-align: top;
-    }
+    <style>
+      table {
+        width: 200px;
+      }
+      td {
+        padding: 10px;
+      }
+      #equals {
+        padding-bottom: 15px;
+      }
     </style>
   </head>
   <body>
@@ -37,35 +24,33 @@
           <h3>Temperature Convertor</h3>
       </div>  
       
-      <table width="800" height="100">
+      <table>
       <tr>
+        <!-- Celsius to Fahrenheit -->
       <td>
         <form class="form-inline" role="form">
           <div class="form-group">
               <label class="sr-only" for="celsius">Celsius to Convert</label>
-              <input class="form-control" id="celsius" placeholder="Enter Temp in C">
+              <input class="form-control" id="celsius" placeholder="Enter Temp in Celsius" type="number" onkeyup="makeFahrenheit()">
           </div>
-          <button type="submit" class="btn btn-success" onclick="makeFahrenheit(document.getElementById('celsius').value); return false;">Convert</button>
         </form>
-        <div id="celMessages"></div>
       </td>
+      <td>
+        <h2 id="equals">=</h2>
+      </td>
+      <!-- Fahrenheit to Celsius -->
       <td>
         <form class="form-inline" role="form">
          <div class="form-group">
               <label class="sr-only" for="fahrenheit">Fahrenheit to Convert</label>
-              <input class="form-control" id="fahrenheit" placeholder="Enter Temp in F">
+              <input class="form-control" id="fahrenheit" placeholder="Enter Temp in Fahrenheit" type="number" onkeyup="makeCelsius()">
           </div>
-          <button type="submit" class="btn btn-success" onclick="makeCelsius(document.getElementById('fahrenheit').value); return false;">Convert</button>
         </form>
-        <div id="farMessages"></div>
       </td>
     </tr>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Load convertor js file -->
     <script src="js/convertor.js"></script>
   </body>
 </html>
